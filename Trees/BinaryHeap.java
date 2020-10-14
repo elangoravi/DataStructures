@@ -103,10 +103,10 @@ public class BinaryHeap {
 	// Top down node sink, O(log(n))
 	private void sink(int i) {
 		int heapsize = size();
-		int left = 2 * i + 1;
-		int right = 2 * i + 2;
-		int smallest = left;
 		while (true) {
+			int left = 2 * i + 1;
+			int right = 2 * i + 2;
+			int smallest = left;
 			if (right < heapsize && heap.get(right) < heap.get(smallest))
 				smallest = right;
 			if (left >= heapsize || heap.get(i) <= heap.get(smallest))
